@@ -1,0 +1,32 @@
+<ion-content>
+  <h2>Cornfirm Trip</h2>
+  <div class="card">
+    <div class="item item-divider">
+      Leaving From:
+    </div>
+    <div class="item item-text-wrap">
+      {{start.stopName}}
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="item item-divider">
+      Arriving At:
+    </div>
+    <div class="item item-text-wrap">
+      {{stop.stopName}}
+    </div>
+  </div>
+  <button class="button button-block button-positive"
+     ng-click="confirmTrip(start.stopId)"
+     ng-if="!success">
+    Confirm
+  </button>
+  <div ng-if="success">
+    <button class="button button-full button-balanced">
+      Trip confirmed!
+    </button>
+    <h3>ETA: 13 mins</h3>
+  </div>
+
+</ion-content>

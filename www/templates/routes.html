@@ -1,0 +1,10 @@
+<ion-content>
+  <h2 class="title">Select Your Nearest Location</h2>
+  <ul class="list">
+    <li class="item"
+        ng-repeat="stop in data"
+        ng-click="go('/destination/' + stop.stopId)">
+      {{stop.stopName}}
+    </li>
+  </ul>
+</ion-content>
