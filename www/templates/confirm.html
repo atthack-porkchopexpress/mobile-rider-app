@@ -17,12 +17,21 @@
       {{stop.stopName}}
     </div>
   </div>
+  <center>
+    <img src="img/animated-bus-black.gif" ng-if="!start"/>
+  </center>
   <button class="button button-block button-positive"
      ng-click="confirmTrip(start.stopId)"
      ng-if="!success">
     Confirm
   </button>
+  <center>
+    <img src="img/animated-bus-black.gif" ng-if="showBus"/>
+  </center>
   <div ng-if="success">
+    <center>
+      <img src="img/checkmark-black.png" ng-if="success">
+    </center>
     <button class="button button-full button-balanced">
       Trip confirmed!
     </button>

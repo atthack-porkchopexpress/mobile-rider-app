@@ -1,5 +1,8 @@
 <ion-content>
   <h2 class="title">Select Your Nearest Location</h2>
+  <center>
+    <img src="img/animated-bus-black.gif" ng-if="!data"/>
+  </center>
   <ul class="list">
     <li class="item"
         ng-repeat="stop in data"

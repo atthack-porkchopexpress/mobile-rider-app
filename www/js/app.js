@@ -104,7 +104,8 @@ angular.module('starter', ['ionic'])
   console.log($stateParams);;
   var params = $stateParams;
   var stopId;
-  $scope.success = false
+  $scope.success = false;
+  $scope.showBus = false;
 
   RouteService.getStopInfo($stateParams.stopId)
       .then(function(res) {
@@ -123,13 +124,16 @@ angular.module('starter', ['ionic'])
       });
 
   $scope.confirmTrip = function(stopId) {
+    $scope.showBus = true;
     RouteService.confirmTrip(stopId)
         .then(function(res) {
-          console.log(res)
+          console.log(res);
+          $scope.showBus = false
           $scope.success = true;
         })
         .catch(function(err) {
-          console.log(err)
+          console.log(err);
+          $scope.showBus = false;
         })
   }
 })
